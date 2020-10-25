@@ -1,5 +1,8 @@
 import discord
 import help
+from dotenv import load_dotenv
+load_dotenv()
+import os
 
 client = discord.Client()
 
@@ -19,4 +22,4 @@ async def on_message(message):
     if message.content.startswith('$help'):
         await help.readHelp(message)
 
-client.run('NzY1NDg2NTM1MTUxNDUyMTkx.X4Vg5A.A8KyisV8ug0S4ReR4_jt8VB1eDc')
+client.run(os.environ.get("token"))
